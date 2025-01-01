@@ -1,0 +1,27 @@
+The solution involves increasing the specificity of the selector `.container .specific`.  This can be achieved by adding another class to the element or making the selector more precise by using the specific class selector again. 
+
+```css
+.container div {
+  color: red;
+}
+
+.container div.specific {
+  color: green;
+}
+
+.container .specific {
+  color: purple; /* This selector is less specific */
+}
+
+/* Solution:  Increase Specificity */
+.container .specific.extra {
+  color: purple;
+}
+
+/* Or use more specific selectors like */
+.container .specific {
+ color: purple; /* Now works as intended */
+}
+```
+
+By adjusting the CSS selectors, the specificity is correctly managed, leading to the expected behavior.
