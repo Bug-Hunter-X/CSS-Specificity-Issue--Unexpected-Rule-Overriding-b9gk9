@@ -1,0 +1,21 @@
+The following CSS code snippet demonstrates an uncommon bug related to the specificity of CSS selectors:
+
+```css
+div {
+  color: blue;
+}
+
+.container div {
+  color: red;
+}
+
+.container div.specific {
+  color: green;
+}
+
+.container .specific {
+  color: purple; /* This rule is surprisingly ignored */
+}
+```
+
+In this scenario, you might expect the `color: purple` style to override the `color: red` style applied to `.container div`.  However, because the selector `.container .specific` is less specific than `.container div.specific`, the purple color is completely ignored despite being placed after the red color rule and being more precise in the class naming.  This behavior is subtle and may lead to unexpected results.
